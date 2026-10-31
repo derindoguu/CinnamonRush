@@ -2,7 +2,7 @@
 
 A singleplayer, browser-based cinnamon roll game set in an industrial kitchen. Big orders come in, and you
 run the line (mix → proof → roll & fill → bake → ice → box) to fill as much as you can before the
-delivery truck arrives. Earn cash, buy kitchen upgrades, and survive bigger orders each day.
+delivery truck arrives.
 
 The game logic runs in a small Java server (no external libraries); the browser renders the kitchen.
 
