@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cinnamon Rush</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="topbar">
+    <div class="brand">
+      <span class="logo-roll"></span>
+      <div>
+        <h1>Cinnamon Rush</h1>
+        <small>Industrial Bakery · Line 3</small>
+      </div>
+    </div>
+    <div class="stat"><span>Day</span><b id="day">1</b></div>
+    <div class="stat"><span>Cash</span><b id="cash">$0.00</b></div>
+    <div class="truckbox">
+      <div class="truck-label"><span>Truck arrives in</span><b id="clock">4:00</b></div>
+      <div id="road">
+        <div id="truck">
+          <svg viewBox="0 0 64 32" width="44" height="22" aria-hidden="true">
+            <rect x="2" y="4" width="38" height="20" rx="2" fill="#f4efe6" stroke="#2b2f33" stroke-width="2"/>
+            <text x="21" y="18" font-size="8" text-anchor="middle" font-family="sans-serif" font-weight="700" fill="#b4541f">ROLLS</text>
+            <path d="M40 10h12l8 8v6H40z" fill="#d8692a" stroke="#2b2f33" stroke-width="2"/>
+            <rect x="44" y="12" width="8" height="5" fill="#bfe3f2"/>
+            <circle cx="14" cy="26" r="4" fill="#2b2f33"/><circle cx="50" cy="26" r="4" fill="#2b2f33"/>
+          </svg>
+        </div>
+        <div class="dock">DOCK</div>
+      </div>
+    </div>
+    <button id="pauseBtn" class="btn ghost" title="Pause (Space)">Pause</button>
+  </header>
+
+  <main id="game">
+    <aside id="orders">
+      <h2>Order Board <small>click an order to box the tray you're holding</small></h2>
+      <div id="orderList"></div>
+    </aside>
+
+    <section id="kitchen">
+      <div class="row">
+        <div class="zone"><h3><i>1</i> Mixers</h3><div class="stations" id="z-mixer"></div></div>
+        <div class="zone grow"><h3><i>2</i> Proofing Cabinet</h3><div class="stations" id="z-proofer"></div></div>
+      </div>
+      <div class="row">
+        <div class="zone"><h3><i>3</i> Rolling &amp; Filling</h3><div class="stations" id="z-table"></div></div>
+        <div class="zone grow"><h3><i>4</i> Deck Ovens</h3><div class="stations" id="z-oven"></div></div>
+      </div>
+      <div class="row">
+        <div class="zone"><h3><i>5</i> Icing</h3><div class="stations" id="z-icer"></div></div>
+        <div class="zone grow"><h3>Cooling Racks</h3><div class="stations" id="z-shelf"></div></div>
+        <div class="zone"><h3>Bin</h3><div class="stations"><div id="trash" class="station k-trash" role="button" tabindex="0" title="Toss what you're holding (X)">
+          <div class="st-head"><span class="st-name">Trash</span></div>
+          <div class="st-body"><div class="bin"></div></div>
+        </div></div></div>
+      </div>
+      <div id="pauseVeil"><div>Paused<small>Press Space or the Resume button</small></div></div>
+    </section>
+  </main>
+
+  <footer id="handsBar">
+    <span class="hb-label">In your hands</span>
+    <div id="handTray"></div>
+    <div id="handText">Empty hands</div>
+    <div id="hint"></div>
+  </footer>
+
+  <div id="picker" hidden>
+    <div class="pk-card">
+      <h3 class="pk-title"></h3>
+      <div class="pk-opts"></div>
+      <p class="pk-note"></p>
+      <button class="btn ghost pk-cancel">Cancel (Esc)</button>
+    </div>
+  </div>
+
+  <div id="overlay" hidden><div class="card"></div></div>
+  <div id="toasts"></div>
+  <div id="offline" hidden>Can't reach the kitchen server. Is <code>run.bat</code> still running?</div>
+
+  <script src="game.js"></script>
+</body>
+</html>
